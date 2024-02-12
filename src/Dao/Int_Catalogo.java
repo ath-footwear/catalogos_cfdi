@@ -19,23 +19,23 @@ import java.util.ArrayList;
  */
 public interface Int_Catalogo {
 
-    public ArrayList<Formadepago> getFormadepago_all(Connection c);
+    public ArrayList<Formadepago> getFormadepago_all();
 
-    public ArrayList<Claveprov> getClaveprod_all(Connection c);
+    public ArrayList<Claveprov> getClaveprod_all();
 
-    public ArrayList<Usocfdi> getUsocfdi_all(Connection c);
+    public ArrayList<Usocfdi> getUsocfdi_all();
 
-    public ArrayList<Unidades> getUnidades_all(Connection c);
+    public ArrayList<Unidades> getUnidades_all();
 
-    public ArrayList<relacion> getrelacion_all(Connection c);
+    public ArrayList<relacion> getrelacion_all();
 
-    public boolean getFormadepago_Var(Connection c, String var);
+    public boolean getFormadepago_Var(String var);
 
-    public boolean getClaveprod_Var(Connection c, String var);
+    public boolean getClaveprod_Var(String var);
 
-    public boolean getUsocfdi_Var(Connection c, String var);
+    public boolean getUsocfdi_Var(String var);
 
-    public boolean getUnidad_Var(Connection c, String var);
+    public boolean getUnidad_Var(String var);
 
-    public boolean getrelacion_Var(Connection c, String var);
+    public boolean getrelacion_Var(String var);
 }
