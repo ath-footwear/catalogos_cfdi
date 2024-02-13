@@ -30,13 +30,11 @@ public class sqlites_server {
      * El metodo de la clase instanciando la conexion y no tener que mandar
      * llamar un metodo extra
      */
-    public void sqlites_serves() {
+    public sqlites_server() {
         try {
             Class.forName("org.sqlite.JDBC");
-            if (!f.exists()) {
-                connectlite = DriverManager.getConnection("jdbc:sqlite:" + urlitecfdi);
-                System.out.println("Conectado");
-            }
+            connectlite = DriverManager.getConnection("jdbc:sqlite:" + urlitecfdi);
+//            System.out.println("Conectado");
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(sqlites_server.class.getName()).log(Level.SEVERE, null, ex);
         }

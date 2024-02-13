@@ -12,7 +12,6 @@ import Modelo.Usocfdi;
 import Modelo.relacion;
 import Persistencia.sql_catalogos;
 import Server.sqlites_server;
-import java.sql.Connection;
 import java.util.ArrayList;
 
 /**
