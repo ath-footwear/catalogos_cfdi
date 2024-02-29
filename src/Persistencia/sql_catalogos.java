@@ -70,12 +70,13 @@ public class sql_catalogos {
         return arr;
     }
 
-/**
- * verifica si existe la clave de acuerdo al parametro que se le pasa
- * @param c conexion
- * @param var clave producto
- * @return boolean true=si encontro, false =no
- */
+    /**
+     * verifica si existe la clave de acuerdo al parametro que se le pasa
+     *
+     * @param c conexion
+     * @param var clave producto
+     * @return boolean true=si encontro, false =no
+     */
     public boolean getClaveprov_Var(Connection c, String var) {
         boolean resp = false;
         try {
@@ -176,5 +177,29 @@ public class sql_catalogos {
             cerrarconexionactual(c);
         }
         return arr;
+    }
+
+    public boolean getUnidades_Var(Connection c, String var) {
+        boolean resp = false;
+        try {
+            ResultSet rs;
+            PreparedStatement st;
+            String sql = "select claveunidad from Unidad where claveunidad=?";
+            st = c.prepareStatement(sql);
+            st.setString(1, var);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                resp = true;
+            }
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            resp = false;
+            Logger.getLogger(sql_catalogos.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+//Solo aplica para conexiones cuando las conexiones no son persistenctes
+            cerrarconexionactual(c);
+        }
+        return resp;
     }
 }

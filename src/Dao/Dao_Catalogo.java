@@ -24,7 +24,7 @@ public class Dao_Catalogo implements Int_Catalogo {
 
     @Override
     public ArrayList<Formadepago> getFormadepago_all() {
-        sqlites_server sq= new sqlites_server();
+        sqlites_server sq = new sqlites_server();
         return s.getformapago_all(sq.getcon());
     }
 
@@ -36,7 +36,7 @@ public class Dao_Catalogo implements Int_Catalogo {
      */
     @Override
     public ArrayList<Claveprov> getClaveprod_all() {
-        sqlites_server sq= new sqlites_server();
+        sqlites_server sq = new sqlites_server();
         return s.getClaveprov_all(sq.getcon());
     }
 
@@ -49,7 +49,7 @@ public class Dao_Catalogo implements Int_Catalogo {
      */
     @Override
     public boolean getClaveprod_Var(String var) {
-        sqlites_server sq= new sqlites_server();
+        sqlites_server sq = new sqlites_server();
         return s.getClaveprov_Var(sq.getcon(), var);
     }
 
@@ -78,9 +78,17 @@ public class Dao_Catalogo implements Int_Catalogo {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * La funcion busca la unidad proporcionada con el catalogo de unidades, si
+     * encuentra regresa un true si no un falso por default
+     *
+     * @param var Variable de unidad
+     * @return booleano
+     */
     @Override
     public boolean getUnidad_Var(String var) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sqlites_server sq = new sqlites_server();
+        return s.getUnidades_Var(sq.getcon(), var);
     }
 
     @Override
